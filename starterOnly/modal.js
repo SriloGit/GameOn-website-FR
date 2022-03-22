@@ -13,6 +13,10 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const modalClose = document.querySelector(".close");
 const submitBtn = document.querySelector(".btn-submit");
+const modalValid = document.querySelector(".modal-thanks");
+const formDisplay = document.querySelector(".formDisplay");
+const modalForm = document.querySelector(".modal-body");
+const closeBtn = document.querySelector(".btn-close");
 
 // Regex
 const emailRegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))+$/;
@@ -42,8 +46,9 @@ modalClose.addEventListener("click", closeModal);
 
 // close modal form
 function closeModal() {
-  modalbg.style.display = "none";  
-  window.location.reload(true);
+  modalbg.style.display = "none";
+  // reset input when modal is closed
+  document.querySelector("form").reset();
 }
 
 
@@ -125,7 +130,7 @@ function locationInvalid(){
   }
 }
 
-//verify cgu
+// verify cgu
 function cguInvalid(){
   if (!cgu.checked){
     formData[6].setAttribute("data-error-visible", "true");
@@ -153,8 +158,20 @@ function validate(e) {
     quantityInvalid() &&
     locationInvalid() &&
     cguInvalid() === true
-  ){
-    console.log("Formulaire complet");
+  ){// Change the display of the modal 
+    function modalValidate(){
+      /*formDisplay.style.visibility= 'hidden';
+      submitBtn.setAttribute("value", "Fermer");
+      modalValid.style.display= 'block';
+      submitBtn.style.visibility= 'visible';
+      submitBtn.addEventListener("click", closeModal);
+      */
+      modalForm.style.display= 'none';
+      modalValid.style.display= 'block';
+      closeBtn.addEventListener("click", closeModal);
+      console.log("Formulaire complet");
+    }
+    modalValidate();
   }
   else{
     firstNameInvalid(),

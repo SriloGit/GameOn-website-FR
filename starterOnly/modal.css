@@ -68,16 +68,20 @@ img {
   display: none;
 }
 
-@media screen and (max-width: 768px) {
-  .topnav a {display: none;}
+@media screen and (max-width: 1130px) {
+  .topnav a {
+    display: none;
+  }
   .topnav a.icon {
     float: right;
     display: block;
   }
 }
 
-@media screen and (max-width: 768px) {
-  .topnav.responsive {position: relative;}
+@media screen and (max-width: 1130px) {
+  .topnav.responsive {
+    position: relative;
+  }
   .topnav.responsive .icon {
     position: absolute;
     right: 0;
@@ -88,16 +92,32 @@ img {
     display: block;
     text-align: left;
   }
+  .topnav i {
+    color: #ff0000;
+  }
+  .topnav i:hover {
+    color: #fff;
+  }
+  .topnav.responsive i {
+    color: #fff;
+  }
 }
 
 
 
  @media screen and (max-width: 540px) {
-  .topnav a {display: none;}
+  .topnav a {
+    display: none;
+  }
   .topnav a.icon {
     float: right;
     display: block;
-    margin-top: -15px;
+  }
+  .topnav.responsive i {
+    color: #ff0000;
+  }
+  .topnav.responsive i:hover {
+    color: #fff;
   }
 } 
 
@@ -167,6 +187,32 @@ main {
   width: 100%;
   overflow: auto;
   background-color: rgba(26, 39, 156, 0.4);
+}
+/* Style User info for form validation*/
+.modal-thanks{
+  display: none;
+  text-align: center;
+  width: 500px;
+  font-size: 35px;
+  padding: 15px 8%;
+  margin: 15px auto;
+}
+
+.modal-valid{
+  padding-bottom: 270px;
+  padding-top: 270px;
+}
+
+.btn-close{
+  background: #fe142f;
+  display: block;
+  margin: 0 auto;
+  border-radius: 7px;
+  font-size: 1rem;
+  padding: 12px 82px;
+  color: #fff;
+  cursor: pointer;
+  border: 0;
 }
 
 .content {
@@ -322,7 +368,7 @@ input[data-error]::after {
   transform: rotate(-45deg);
 }
 .btn-submit,
-.btn-signup {
+.btn-signup{
   background: #fe142f;
   display: block;
   margin: 0 auto;
@@ -462,6 +508,7 @@ input[data-error]::after {
   height: 100%;
   display: block;
   padding: 0;
+  object-fit: cover;
 }
 .copyrights {
   color: #fe142f;
@@ -514,6 +561,10 @@ footer {
   .copyrights {
     margin-top: 50px;
     text-align: center;
+  }
+  
+  .bground {
+    background-color: transparent;
   }
 }
 
