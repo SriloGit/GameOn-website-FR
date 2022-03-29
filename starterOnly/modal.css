@@ -17,7 +17,6 @@ body {
   background-image: url("background.png");
   font-family: var(--font-default);
   font-size: 18px;
-  max-width: 1300px;
   margin: 0 auto;
 }
 
@@ -55,13 +54,14 @@ img {
 .topnav a:hover {
   background-color: #ff0000;
   color: #ffffff;
-  border-radius: 15px;
+  border-radius: 8px;
 }
 
 .topnav a.active {
   background-color: #ff0000;
   color: #ffffff;
-  border-radius: 15px;
+  border-radius: 8px;
+  text-decoration: underline;
 }
 
 .topnav .icon {
@@ -75,6 +75,10 @@ img {
   .topnav a.icon {
     float: right;
     display: block;
+  }
+  .topnav{
+    overflow: visible;
+    position: relative;
   }
 }
 
@@ -126,13 +130,8 @@ main {
   font-weight: bolder;
   color: black;
   padding-top: 0.5vw;
-  padding-left: 2vw;
-  padding-right: 2vw;
-  margin: 1px 20px 15px;
   border-radius: 2rem;
   text-align: justify;
-
-
 }
 
 .modal-btn {
@@ -216,7 +215,7 @@ main {
 }
 
 .content {
-  margin: 5% auto;
+  margin: 100px auto 0px auto;
   width: 100%;
   max-width: 500px;
   animation-name: modalopen;
@@ -451,13 +450,14 @@ input[data-error]::after {
   font-size: 16px;
 }
 .hero-section {
-  min-height: 93vh;
+  min-height: 81vh;
   border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   overflow: hidden;
   box-shadow: 0 2px 7px 2px rgba(0, 0, 0, 0.2);
   margin-bottom: 10px;
+  margin: 1px 20px 15px;
 }
 .hero-content {
   padding: 51px 67px;
@@ -524,6 +524,7 @@ footer {
   padding-left: 2vw;
   padding-right: 2vw;
   margin: 0 20px;
+  position: relative;
 }
 @media screen and (max-width: 800px) {
   .hero-section {
@@ -542,12 +543,12 @@ footer {
     display: none;
   }
   .hero-headline {
-    font-size: 4.5rem;
+    font-size: 3.5rem;
     white-space: normal;
   }
   .hero-text {
     width: unset;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
   .hero-img img {
     border-radius: 10px;
@@ -562,9 +563,9 @@ footer {
     margin-top: 50px;
     text-align: center;
   }
-  
-  .bground {
-    background-color: transparent;
+  .content {
+    max-width: none;
+    border-radius: 10px 10px 0px 0px;
   }
 }
 

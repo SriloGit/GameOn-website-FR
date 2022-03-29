@@ -22,7 +22,7 @@ const closeBtn = document.querySelector(".btn-close");
 const emailRegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))+$/;
 const nameRegExp = /[^0-9<>()\[\]\\.,;:\s@"][A-Za-z]{1,}/
 const birthdateRegExp = /[^A-Za-z<>()\[\]\\.,;:\s@"][0-9]{2}|[^A-Za-z<>()\[\]\\.,;:\s@"][0-9]{2}|[^A-Za-z<>()\[\]\\.,;:\s@"][0-9]{4}/
-const quantityRegExp = /[^A-Za-z<>()\[\]\\.,;:\s@"][0-9]{0,}/
+const quantityRegExp = /^[0-9]+$/
 
 // DOM form inputs
 const first = document.getElementById('first');
@@ -39,6 +39,7 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 // launch modal form
 function launchModal() {
   modalbg.style.display = "block";
+  modalForm.style.display = "block";
 }
 
 // close modal event
@@ -47,6 +48,8 @@ modalClose.addEventListener("click", closeModal);
 // close modal form
 function closeModal() {
   modalbg.style.display = "none";
+  modalForm.style.display = "none";
+  modalValid.style.display = "none";
   // reset input when modal is closed
   document.querySelector("form").reset();
 }
