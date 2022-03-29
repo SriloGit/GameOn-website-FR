@@ -30,7 +30,6 @@ const last = document.getElementById('last');
 const email = document.getElementById('email');
 const birthdate = document.getElementById('birthdate');
 const quantity = document.getElementById('quantity');
-//const location = document.querySelector('input[name="location"]:checked');
 const cgu = document.getElementById('checkbox1');
 
 // launch modal event
@@ -161,14 +160,9 @@ function validate(e) {
     quantityInvalid() &&
     locationInvalid() &&
     cguInvalid() === true
-  ){// Change the display of the modal 
+  ){
+    // Change the display of the modal 
     function modalValidate(){
-      /*formDisplay.style.visibility= 'hidden';
-      submitBtn.setAttribute("value", "Fermer");
-      modalValid.style.display= 'block';
-      submitBtn.style.visibility= 'visible';
-      submitBtn.addEventListener("click", closeModal);
-      */
       modalForm.style.display= 'none';
       modalValid.style.display= 'block';
       closeBtn.addEventListener("click", closeModal);
